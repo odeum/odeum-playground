@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
+
+// Framework imports
 import { 
 	AppContainer,
 	Header, 
 	MenuPanel, 
 	Menu,
 	Tab,
-	Workspace, 
 	Footer } from 'odeum-app'
 
-/* Demo */
-import RouteDemo from 'demos/RouteDemo'
-import ReactComp from 'demos/ReactComp'
-import { SimpleDiv } from 'demos/SimpleDiv'
-import { RenderFooterLabel, handleLink } from './demos/FooterLabel'
-import greenTheme from 'demos/greenTheme'
+// Framework helper imports
+import { RenderFooterLabel, handleLink } from './framework/FooterLabel'
+
+// Content imports
+import Homepage from './content/Homepage/Homepage'
+import Installation from './content/docs/Installation'
 
 class App extends Component {
 
@@ -23,72 +24,44 @@ class App extends Component {
 		this.state = {
 			helpID: 0
 		}
-
-		Menu.defaultProps = {
-			setHelpID: this.setHelpID,
-			icon: 'menu' 
-		}
-
-		Tab.defaultProps = {
-			setHelpID: this.setHelpID,
-			label: 'Tab', 
-			icon: 'tab' 
-		}
-
-		Workspace.defaultProps = {
-			setHelpID: this.setHelpID
-		}
-
-	}
-
-	setHelpID = (helpID) => {
-		// console.log(helpID)
-		return helpID === this.state.helpID ? null : this.setState({ helpID: helpID })
 	}
 
 	render() {
 		return (
-			<AppContainer theme={greenTheme}>
+			<AppContainer>
 				<Header logo={'default'}/>
 				<MenuPanel>
-					<Menu route={'/'} exact helpID={1}>
-						<SimpleDiv />
-					</Menu>
-					<Menu route={'/home'} label={'Menu with no tabs'} icon={'home'}>
-						<Workspace helpID={2}>
-							<SimpleDiv />							
-						</Workspace>
+
+					<Menu route={'/'} exact>
+						<Homepage />
 					</Menu>
 
-					<Menu icon={'people'} route={'/child'} label={'Menu with one Tab and a Route Demo'}>
-						<Tab icon={'assignment'} label={'Overflow'} helpID={3}>
-							<RouteDemo />
-						</Tab>
-					</Menu>
-					<Menu icon={'tab'} route={'/children'} label={'Menu with children'}>
-						<Tab icon={'assignment'} label={'Overflow'} helpID={4}>
-							<SimpleDiv />
-						</Tab>
-						<Tab icon={'assignment_turned_in'} label={'Lady Gaga'} route={'/react-component'} helpID={5}>
-							<ReactComp helpID={6} />
-						</Tab>
-						<Tab icon={'visibility'} label={'Hello workspace'} route={'/workspace'} helpID={7}>
-							<div>Hello Workspace ... </div>
-						</Tab>
-					</Menu>
-					<Menu label={'Auto Generated'}>
-						<Tab label={'Route'} helpID={8}>
-							Auto Generated Route
+					<Menu icon={'star'} label={'About'} route={'/about'}>
+						<Tab icon={'star'} label={'About'} route={'/'}>
+							About ODEUM Code ... 
 						</Tab>
 					</Menu>
 
+					<Menu icon={'directions'} label={'Docs'} route={'/docs'}>
+						<Tab icon={'cloud_download'} label={'Installation'} route={'/installation'}>
+							<Installation />
+						</Tab>
+						<Tab icon={'language'} label={'Hello World'} route={'/hello-world'}>
+							Hello World ... 
+						</Tab>
+					</Menu>
+
+					<Menu icon={'code'} label={'Tutorial'} route={'/tutorial'}>
+						<Tab icon={'code'} label={'Tutorial'}>
+							Tutorial ... 
+						</Tab>						
+					</Menu>
+					
 				</MenuPanel>
-				<Footer label={RenderFooterLabel} labelLink={handleLink()} helpID={this.state.helpID} />
+				<Footer label={RenderFooterLabel} labelLink={handleLink()} helpID={'Messages ...'} />
 			</AppContainer>
 		)
 	}
 }
 
 export default App
-
-

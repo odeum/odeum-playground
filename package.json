@@ -6,8 +6,9 @@
   "author": "Christian Broberg",
   "license": "MIT",
   "dependencies": {
-    "odeum-app": "^0.2.22",
-    "odeum-ui": "^0.1.26",
+    "grid-styled": "^2.0.0-11",
+    "odeum-app": "^0.2.23",
+    "odeum-ui": "^0.1.27",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-router-dom": "^4.2.2",
