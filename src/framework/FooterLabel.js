@@ -8,7 +8,7 @@ export const RenderFooterLabel = () => {
 	const date = new Date()
 	return (
 		<div>
-			<strong>ODEUM Code</strong> v0.2.23 © Copyright
+			<strong>ODEUM Code</strong> v0.2.24 © Copyright
 			{' '}{date.getFullYear()}
 		</div>
 	)
