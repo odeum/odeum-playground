@@ -1,7 +1,7 @@
 {
-  "name": "create-odeum-project",
+  "name": "odeum-playground",
   "version": "0.1.0",
-  "description": "Create a new project template with Github repository for an ODEUM Code Web App.",
+  "description": "ODEUM Playground for experimenting and testing different packages and components.",
   "private": true,
   "author": "Christian Broberg",
   "license": "MIT",
