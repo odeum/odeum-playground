@@ -15,6 +15,7 @@ import { RenderFooterLabel, handleLink } from './framework/FooterLabel'
 // Content imports
 import Homepage from './content/Homepage/Homepage'
 import Installation from './content/docs/Installation'
+import Helppage from './content/Helppage/Helppage'
 
 class App extends Component {
 
@@ -57,6 +58,12 @@ class App extends Component {
 						</Tab>						
 					</Menu>
 					
+					<Menu icon={'help'} label={'Help'} route={'/help'}>
+						<Tab icon={'help'} label={'Help'} route={'/'}>
+							<Helppage />
+						</Tab>
+					</Menu>
+
 				</MenuPanel>
 				<Footer label={RenderFooterLabel} labelLink={handleLink()} helpID={'Messages ...'} />
 			</AppContainer>

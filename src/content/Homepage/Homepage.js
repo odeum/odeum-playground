@@ -21,7 +21,7 @@ const Homepage = () => {
 				<HomepageButonsContainer>
 					<ButtonPanel>
 
-						<LinkButton label={'Get Started'} icon={'code'} route={'/docs/hello-world'}/>
+						<LinkButton label={'Get Started'} icon={'code'} route={'/docs/hello-world'} color={'#13A085'}/>
 						<HomepageButtonSpacer />
 						<LinkButton label={'Take the Tutorial'} icon={'star'} route={'/tutorial/tutorial'}/>
 
