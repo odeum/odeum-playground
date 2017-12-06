@@ -14,8 +14,8 @@ import { RenderFooterLabel, handleLink } from './framework/FooterLabel'
 
 // Content imports
 import Homepage from './content/Homepage/Homepage'
-import Installation from './content/docs/Installation'
-import Helppage from './content/Helppage/Helppage'
+// import Installation from './content/docs/Installation'
+// import Helppage from './content/Helppage/Helppage'
 
 class App extends Component {
 
@@ -30,37 +30,61 @@ class App extends Component {
 	render() {
 		return (
 			<AppContainer>
-				<Header logo={'default'}/>
+				<Header/>
 				<MenuPanel>
 
-					<Menu route={'/'} exact>
+					<Menu route={'/'}>
 						<Homepage />
 					</Menu>
 
-					<Menu icon={'star'} label={'About'} route={'/about'}>
-						<Tab icon={'star'} label={'About'} route={'/'}>
-							About ODEUM Code ... 
+					<Menu icon={'star'} label={'Dashboard'} route={'/dashboard'}>
+						<Tab icon={'dashboard'} label={'Dashboard'} route={'/'}>
+							Dashboard ... 
 						</Tab>
 					</Menu>
 
-					<Menu icon={'directions'} label={'Docs'} route={'/docs'}>
-						<Tab icon={'cloud_download'} label={'Installation'} route={'/installation'}>
-							<Installation />
+					<Menu icon={'web_asset'} label={'Pages'} route={'/pages'}>
+						<Tab icon={'check_circle'} label={'Published'} route={'/published'}>
+							Published pages ...
 						</Tab>
-						<Tab icon={'language'} label={'Hello World'} route={'/hello-world'}>
-							Hello World ... 
+						<Tab icon={'mode_edit'} label={'Drafts'} route={'/drafts'}>
+							Draft pages ... 
+						</Tab>
+						<Tab icon={'access_time'} label={'Scheduled'} route={'/scheduled'}>
+							Scheduled pages ... 
+						</Tab>
+						<Tab icon={'delete'} label={'Trashed'} route={'/trashed'}>
+							Trashed pages ... 
 						</Tab>
 					</Menu>
 
-					<Menu icon={'code'} label={'Tutorial'} route={'/tutorial'}>
-						<Tab icon={'code'} label={'Tutorial'}>
-							Tutorial ... 
+					<Menu icon={'web'} label={'Content'} route={'/content'}>
+						<Tab icon={'web'} label={'Content'}>
+							Content ... 
 						</Tab>						
 					</Menu>
 					
-					<Menu icon={'help'} label={'Help'} route={'/help'}>
-						<Tab icon={'help'} label={'Help'} route={'/'}>
-							<Helppage />
+					<Menu icon={'photo_camera'} label={'Media'} route={'/media'}>
+						<Tab icon={'photo_camera'} label={'Media'} route={'/media'}>
+							Media ...
+						</Tab>
+					</Menu>
+
+					<Menu icon={'people'} label={'Users'} route={'/users'}>
+						<Tab icon={'people'} label={'Users'} route={'/'}>
+							Users ...
+						</Tab>
+					</Menu>
+
+					<Menu icon={'view_module'} label={'Apps'} route={'/apps'}>
+						<Tab icon={'view_module'} label={'Apps'} route={'/'}>
+							Apps ...
+						</Tab>
+					</Menu>
+
+					<Menu icon={'settings'} label={'Settings'} route={'/settings'}>
+						<Tab icon={'settings'} label={'Settings'} route={'/'}>
+							Settings ...
 						</Tab>
 					</Menu>
 
