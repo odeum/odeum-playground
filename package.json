@@ -5,6 +5,7 @@
   "private": true,
   "author": "Christian Broberg",
   "license": "MIT",
+  "homepage": "http://vader2.webhouse.net/playground/",
   "dependencies": {
 	"grid-styled": "^2.0.0-11",
 	"odeum-app": "^0.2.57",
